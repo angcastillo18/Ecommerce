@@ -1,14 +1,15 @@
 <template>
   <div class="market">
-    <h1>This is a market page</h1>
-    <SignUp/>
+    <div class="container">
+      <h1>This is market</h1>
+    </div>
   </div>
 </template>
 <script>
-import SignUp from '@/components/SignUp.vue'
+/* import SignUp from '@/components/SignUp.vue' */
 export default {
   components:{
-    SignUp
+    
   }
 }
 </script>

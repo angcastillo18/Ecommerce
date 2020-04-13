@@ -1,13 +1,32 @@
 <template>
-  <div id="modal">
-    <transition name="fade" appear>
-        <div class="modal_overlay" v-if="showModal" @click="setShowModal(false)" ></div>
-    </transition>
-    <transition name="slide" appear>
-        <div class="modal" v-if="showModal">
-            <button @click="setShowModal(false)">X</button>
-            <SignIn/>
+  <div id="modal" v-if="showModal">
+    <transition name="modal">
+      <div class="modal-mask">
+        <div class="modal-wrapper">
+          <div class="modal-container">
+            <div >
+              <div class="modal-header">
+                  <button class="modal-default-button button" @click="setShowModal(false)">
+                    X
+                  </button>
+              </div>
+              <tabs cache-lifetime="0" :options="{ defaultTabHash: 'first-tab' }">
+                  <tab id="first-tab" name="Iniciar Sesión">
+                      <SignIn/>
+                  </tab>
+                  <tab id="second-tab" name="Registro">
+                      <SignUp/>
+                  </tab>
+              </tabs>
+            </div>
+<!--             <div class="modal-footer">
+              <slot name="footer">
+                
+              </slot>
+            </div> -->
+          </div>
         </div>
+      </div>
     </transition>
   </div>
 </template>
@@ -36,53 +55,65 @@ export default {
 }
 </script>
 
-<style scoped>
-/* estilos de la capa oscura */
-.modal_overlay{
- position: absolute;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- z-index: 98;
- background-color: rgba(0, 0, 0, 0.3);
-}
-/* animaciones del modal-overlay- la capa oscura */
-.fade-enter-active,
-.fade-leave-active {
- transition: opacity .5s;
+<style  scoped>
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+
+
 }
 
-.fade-enter,
-.fade-leave-to {
- opacity: 0;
-}
-/* estilos del modal centrado */
-.modal{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 99;
-    
-    width: 100%;
-    max-width: 600px;
-    background-color: #FFF;
-    border-radius: 16px;
-    
-    padding: 25px; 
-}
-/* estilos de la entra y salida del modal */
-.slide-enter-active,
-.slide-leave-active {
- transition: transform .5s;
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
 }
 
-.slide-enter,
-.slide-leave-to {
- transform: translateY(-50%) translateX(100vw);
+.modal-container {
+  max-width: 600px;
+  margin: 0px auto;
+  padding: 5px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+
 }
-/* Estilos del contenido del modal */
-/* Estilos del tab de contenido */
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+  background-color: rgb(250, 40, 40);
+}
+/* Transiciones */
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
 
 </style>
