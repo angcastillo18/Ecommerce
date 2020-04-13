@@ -9,12 +9,12 @@
           <li v-for="error in errors">{{ error }}</li>
           </ul>
         </p>
-        <input v-model="name" type="text" name="name" placeholder="Nombre" >
-        <input v-model="lastName" type="text" name="lastName" placeholder="Apellidos" >
-        <input v-model="email" type="email" name="email" placeholder="Email" >
-        <input v-model="phone" type="number" name="phone" placeholder="Celular" >
-        <input v-model="password" type="password" name="password" placeholder="Contraseña" >
-        <input v-model="confirmPassword" type="password" name="confirmPassword" placeholder="Confirmar contraseña" >
+        <input v-model="name" type="text" name="name" placeholder="Nombre" required>
+        <input v-model="lastName" type="text" name="lastName" placeholder="Apellidos" required>
+        <input v-model="email" type="email" name="email" placeholder="Email" required>
+        <input v-model="phone" type="number" name="phone" placeholder="Celular" required>
+        <input v-model="password" type="password" name="password" placeholder="Contraseña" required>
+        <input v-model="confirmPassword" type="password" name="confirmPassword" placeholder="Confirmar contraseña" required>
         <input  type="submit" value="Registrar" />
     </form>
   </div>

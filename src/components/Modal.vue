@@ -14,7 +14,7 @@
                   <tab id="first-tab" name="Iniciar Sesión">
                       <SignIn/>
                   </tab>
-                  <tab id="second-tab" name="Registro">
+                  <tab id="second-tab" name="Registrarme">
                       <SignUp/>
                   </tab>
               </tabs>
@@ -58,7 +58,7 @@ export default {
 <style  scoped>
 
 .modal-mask {
-  position: fixed;
+  position: absolute;
   z-index: 9998;
   top: 0;
   left: 0;
@@ -68,17 +68,17 @@ export default {
   display: table;
   transition: opacity .3s ease;
 
-
 }
 
 .modal-wrapper {
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: top;
+  
 }
 
 .modal-container {
   max-width: 600px;
-  margin: 0px auto;
+  margin: 4% auto;
   padding: 5px 20px;
   background-color: #fff;
   border-radius: 10px;

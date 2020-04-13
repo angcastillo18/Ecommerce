@@ -235,7 +235,7 @@ background: #2EBC99;
 
 .tabs-component-tab {
   color: #999;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   margin-right: 0;
   list-style: none;
@@ -250,7 +250,7 @@ background: #2EBC99;
 }
 
 .tabs-component-tab.is-active {
-  color: #000;
+  color:black;
 }
 
 .tabs-component-tab.is-disabled * {
@@ -269,7 +269,7 @@ background: #2EBC99;
   }
 
   .tabs-component-tab.is-active {
-    border-bottom: solid 1px #fff;
+    border-bottom: solid 2px #43D1AF;
     z-index: 2;
     transform: translateY(0);
   }

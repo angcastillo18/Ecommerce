@@ -9,8 +9,8 @@
 			<li v-for="error in errors">{{ error }}</li>
 			</ul>
 		</p>
-        <input v-model="email" type="email" name="field1" placeholder="Email" required>
-        <input v-model="password" type="password" name="field2" placeholder="Contraseña" required>
+        <input v-model="email" type="email" name="field1" placeholder="Email" >
+        <input v-model="password" type="password" name="field2" placeholder="Contraseña" >
         <input type="submit" value="Ingresar" />
     </form>
   </div>

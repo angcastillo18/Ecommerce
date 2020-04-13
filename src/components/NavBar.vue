@@ -71,7 +71,7 @@ a{
 }
 
 nav{
-    width: 100vw;
+    width: 100%;
     background-color: #D6EFFF;
 }
 </style>
