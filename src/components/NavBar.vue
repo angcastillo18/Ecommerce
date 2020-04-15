@@ -2,6 +2,8 @@
   <div id="navbar">
     <nav>
         <ul>
+          <li class="logo">Ecommerce</li>
+          <div class="items">
             <li> 
                 <!-- link to Home -->
                 <router-link to="/">Home</router-link>
@@ -16,6 +18,10 @@
                     Mi Cuenta
                 </button>
             </li>
+            <li >
+              <input class="search-icon" type="search" placeholder="search">
+            </li>
+          </div>
         </ul>
     </nav>
   </div>
@@ -38,41 +44,62 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
-#navbar a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#navbar a.router-link-exact-active {
-  background-color:rgb(136, 204, 247) ;
-  color: white;
-}
-ul{
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  justify-content: center;
-}
-
-li{
-  list-style-type: none;
-
-  margin: 1vw 2vw;
-  font-size: 2.7vh;
-  
-}
-
-a{
-  text-decoration: none;
-  padding: 1vw;
-}
-
+/* Estilos NAVBAR */
 nav{
-    width: 100%;
-    background-color: #D6EFFF;
+  background: #222222;
+  padding: 10px 40px 10px 70px;
+  border: 1px solid #000;
+  border-left: none;
+  border-right: none;
+  
+  ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    li{
+      margin: auto 20px;
+      
+    }
+    li.logo{
+      
+        color: white;
+        font-size: 30px;
+        font-weight: 700;
+    } 
+    div.items{
+      
+      display: inline-flex;
+      padding: 0 25px;
+      a{
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+        /* padding: 0 12px; */
+        color: white;
+
+      }
+      a.router-link-exact-active{
+          color: #43D1AF;
+        }
+    }
+    .search-icon{
+      height: 40px;
+      width: 240px;
+      border: none;
+      border-radius: 5px ;
+      outline: none;
+      padding: 0 10px;
+      color: #000;
+      font-size: 1;
+    
+    }
+  }
+
 }
+
 </style>
 
