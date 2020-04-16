@@ -14,7 +14,10 @@
             </li>
             <li>
                 <!-- link MyAccount -->
-                <button @click="setShowModal(true)" class="button">
+                <div class="link_myprofile" v-if="isLogged">
+                  Soy Angelo  ( ͡° ͜ʖ ͡°)
+                </div>
+                <button v-else @click="setShowModal(true)" class="button">
                     Mi Cuenta
                 </button>
             </li>
@@ -30,7 +33,8 @@
 <script>
 //importamos map mutations
 import { mapMutations } from 'vuex'
-
+//importamos el map state
+import {mapState} from 'vuex'
 export default {
     name:'NavBar',
     data(){
@@ -41,6 +45,9 @@ export default {
     methods: {
       ...mapMutations(['setShowModal']),
     },
+    computed:{
+      ...mapState(['isLogged'])
+    }
 }
 </script>
 
@@ -85,6 +92,9 @@ nav{
       a.router-link-exact-active{
           color: #43D1AF;
         }
+    }
+    .link_myprofile{
+      color: white;
     }
     .search-icon{
       height: 40px;
